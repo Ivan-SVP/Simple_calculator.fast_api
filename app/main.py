@@ -6,6 +6,7 @@ from fastapi import FastAPI
 
 from app.config.logging import LOGGING_CONFIG
 from app.routers import router as calc_router
+from front_part.routers import router as front_router
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +34,7 @@ class Application:
         """Настраиваем роуты приложения."""
         logger.debug('Configure routes.')
         self.server.include_router(calc_router)
+        self.server.include_router(front_router)
 
 
 app = Application()
