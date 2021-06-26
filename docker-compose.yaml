@@ -1,0 +1,12 @@
+version: "2"
+services:
+  calculator:
+    restart: always
+    environment:
+      - LOGGING_LEVEL=WARNING
+    build:
+      context: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./:/app/
